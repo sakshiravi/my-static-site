@@ -1,10 +1,9 @@
-options:
-  logging: CLOUD_LOGGING_ONLY
-
 substitutions:
   _BUCKET: "my-site-saksshi04-16395"
 
 steps:
-
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['-m', 'rsync', '-r', 'public/', 'gs://${_BUCKET}']
+  args: ['-m', 'rsync', '-r', './', 'gs://${_BUCKET}']
+
+options:
+  logging: CLOUD_LOGGING_ONLY
