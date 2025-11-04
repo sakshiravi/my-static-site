@@ -1,0 +1,7 @@
+substitutions:
+  _BUCKET: "my-site-saksshi04-16395"
+
+steps:
+
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['-m', 'rsync', '-r', 'public/', 'gs://${_BUCKET}']
